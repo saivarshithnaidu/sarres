@@ -15,7 +15,7 @@ const BrandStory = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative z-10 rounded-2xl overflow-hidden shadow-2xl"
+              className="relative z-10 rounded-2xl overflow-hidden shadow-2xl optimize-gpu"
             >
               <FashionImage 
                 src="/images/about/heritage.png"

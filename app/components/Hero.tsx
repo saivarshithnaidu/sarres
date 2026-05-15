@@ -9,7 +9,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-[#FDFBF7]">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-cream/30 -skew-x-12 transform translate-x-1/2" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-maroon/5 rounded-full blur-3xl" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-maroon/5 rounded-full blur-2xl md:blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -22,9 +22,9 @@ const Hero = () => {
             className="relative"
           >
             <motion.div 
-              animate={{ y: [0, -15, 0] }}
+              animate={typeof window !== 'undefined' && window.innerWidth > 768 ? { y: [0, -15, 0] } : {}}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-[12px] border-white group"
+              className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-[8px] md:border-[12px] border-white group optimize-gpu"
             >
               <FashionImage 
                 src="/images/hero.png"
@@ -34,12 +34,12 @@ const Hero = () => {
               
               {/* Cinematic Brand Overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center bg-black/10 group-hover:bg-black/5 transition-colors duration-700">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="glass p-8 rounded-2xl border border-white/40 max-w-xs shadow-2xl backdrop-blur-md"
-                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="glass p-6 md:p-8 rounded-2xl border border-white/40 max-w-xs shadow-2xl"
+                  >
                   <span className="font-serif text-sm font-bold tracking-[0.4em] text-brand-maroon uppercase block mb-4 border-b border-brand-maroon/20 pb-4">
                     Signature Edition
                   </span>

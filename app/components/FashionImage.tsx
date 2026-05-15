@@ -29,7 +29,7 @@ const FashionImage = ({ className, patternType = "silk", title, src }: FashionIm
   };
 
   return (
-    <div className={`relative overflow-hidden ${!src ? getPattern() : "bg-brand-black"} ${className}`}>
+    <div className={`relative overflow-hidden optimize-gpu ${!src ? getPattern() : "bg-brand-black"} ${className}`}>
       {src && (
         <Image
           src={src}
@@ -43,9 +43,9 @@ const FashionImage = ({ className, patternType = "silk", title, src }: FashionIm
       {/* Texture Overlay 1: Fine Grain */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
       
-      {/* Texture Overlay 2: Silk Flow (SVG Pattern) */}
+      {/* Texture Overlay 2: Silk Flow (SVG Pattern) - Disabled on mobile for performance */}
       {!src && (
-        <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute inset-0 w-full h-full opacity-20 hidden md:block" xmlns="http://www.w3.org/2000/svg">
           <filter id="noiseFilter">
             <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" />
           </filter>
@@ -56,11 +56,11 @@ const FashionImage = ({ className, patternType = "silk", title, src }: FashionIm
       {/* Abstract Shapes to simulate Saree drapes - only if no image */}
       {!src && (
         <motion.div
-          animate={{ 
+          animate={typeof window !== 'undefined' && window.innerWidth > 768 ? { 
             scale: [1, 1.1, 1],
             rotate: [0, 5, 0],
             x: [0, 10, 0]
-          }}
+          } : {}}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-1/4 -left-1/4 w-[150%] h-[150%] opacity-30"
           style={{

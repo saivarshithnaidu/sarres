@@ -57,7 +57,7 @@ const FeaturedCollections = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative"
+              className="group relative optimize-gpu"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl mb-6 shadow-lg">
                 <FashionImage 

@@ -41,7 +41,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-brand-cream/30 p-10 rounded-[40px] shadow-luxury border border-brand-maroon/5 flex flex-col items-center text-center group hover:bg-white transition-all duration-500"
+              className="bg-brand-cream/30 p-10 rounded-[40px] shadow-luxury border border-brand-maroon/5 flex flex-col items-center text-center group hover:bg-white transition-all duration-500 optimize-gpu"
             >
               <div className="relative mb-8">
                 <div className="w-24 h-24 rounded-full bg-brand-maroon flex items-center justify-center text-white text-2xl font-serif font-bold border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-500">

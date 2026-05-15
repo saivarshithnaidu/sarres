@@ -37,11 +37,30 @@ body {
   }
 
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20;
+    @apply bg-white/70 border border-white/20;
+    backdrop-filter: blur(12px);
   }
   
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-md border border-white/10;
+    @apply bg-black/40 border border-white/10;
+    backdrop-filter: blur(12px);
+  }
+
+  /* Optimize blur for mobile */
+  @media (max-width: 768px) {
+    .glass {
+      backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+    .glass-dark {
+      backdrop-filter: blur(4px);
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .optimize-gpu {
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .text-gold-gradient {

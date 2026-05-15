@@ -22,7 +22,7 @@ const Stories = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
-              className="flex-none flex flex-col items-center gap-2 group cursor-pointer"
+              className="flex-none flex flex-col items-center gap-2 group cursor-pointer optimize-gpu"
             >
               <div className="w-20 h-20 rounded-full p-[3px] border-2 border-brand-maroon group-hover:border-brand-gold transition-colors duration-500">
                 <div className={`w-full h-full rounded-full ${story.color} flex items-center justify-center text-white font-serif text-[10px] font-bold uppercase tracking-tighter text-center px-2`}>

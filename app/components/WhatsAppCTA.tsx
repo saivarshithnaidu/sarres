@@ -7,16 +7,16 @@ import Image from "next/image";
 const WhatsAppCTA = () => {
   return (
     <section className="py-24 bg-brand-maroon relative overflow-hidden">
-      {/* Decorative Gold Circles */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-gold/10 blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-gold/10 blur-[100px] rounded-full translate-x-1/2 translate-y-1/2" />
+      {/* Decorative Gold Circles - Reduced blur for mobile */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-gold/10 blur-[50px] md:blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-gold/10 blur-[50px] md:blur-[100px] rounded-full translate-x-1/2 translate-y-1/2" />
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center optimize-gpu"
         >
           <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-brand-gold/30 mb-10 shadow-2xl relative">
             <Image 

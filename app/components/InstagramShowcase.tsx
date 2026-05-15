@@ -68,7 +68,7 @@ const InstagramShowcase = () => {
                 <FashionImage
                   src={reel.image}
                   title={`Reel #${reel.id}`}
-                  className="w-full h-full grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full md:grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 optimize-gpu"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
                 
@@ -91,9 +91,9 @@ const InstagramShowcase = () => {
             ))}
           </div>
           
-          {/* Subtle Glow Overlay */}
-          <div className="absolute top-1/2 left-0 w-64 h-64 bg-brand-gold/20 blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
-          <div className="absolute top-1/2 right-0 w-64 h-64 bg-brand-maroon/30 blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
+          {/* Subtle Glow Overlay - Reduced blur for mobile */}
+          <div className="absolute top-1/2 left-0 w-64 h-64 bg-brand-gold/20 blur-[60px] md:blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
+          <div className="absolute top-1/2 right-0 w-64 h-64 bg-brand-maroon/30 blur-[60px] md:blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
         </div>
       </div>
     </section>

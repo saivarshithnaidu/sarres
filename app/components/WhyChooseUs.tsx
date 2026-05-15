@@ -65,7 +65,7 @@ const WhyChooseUs = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="bg-white p-10 rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 border border-brand-maroon/5 group"
+              className="bg-white p-10 rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 border border-brand-maroon/5 group optimize-gpu"
             >
               <div className="w-16 h-16 rounded-2xl bg-brand-maroon/5 flex items-center justify-center text-brand-maroon mb-8 group-hover:bg-brand-maroon group-hover:text-white transition-colors duration-500">
                 {feature.icon}
